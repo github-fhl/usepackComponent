@@ -1,0 +1,17 @@
+Index: src/components/zj.vue
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/zj.vue b/src/components/zj.vue
+--- a/src/components/zj.vue	(revision 1866023b6d6877477df6a674f4006cad43d29d86)
++++ b/src/components/zj.vue	(date 1641829440045)
+@@ -2,7 +2,7 @@
+   <div>
+     <el-button-group>
+       <el-button :plain="true" :round="true" class="iconfont" type="primary"
+-        >查看dev</el-button
++        >查看dev踩踩踩踩踩踩踩踩踩踩踩踩踩踩踩踩踩踩从</el-button
+       >
+     </el-button-group>
+     <!-- <el-radio-group v-model="tabPosition" style="margin-bottom: 30px;">
