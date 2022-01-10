@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>123</p>
+    <script>
+        // var browser = (function() {
+        //   var s = navigator.userAgent.toLowerCase();
+        //   console.log(s);
+        //   var match =
+        //      /(webkit)[ \/]([\w.]+)/.exec(s) ||
+        //      /(opera)(?:.*version)?[ \/]([\w.]+)/.exec(s) ||
+        //      /(msie) ([\w.]+)/.exec(s) ||
+        //      (!/compatible/.test(s) && /(mozilla)(?:.*? rv:([\w.]+))?/.exec(s)) ||
+        //     [];
+        //   console.log(match);
+        //   if (match.length > 0) {
+        //     console.log({ name: match[1] || "", version: match[2] || "0" });
+        //     return { name: match[1] || "", version: match[2] || "0" };
+        //   }
+        //   return false
+        // })();
+    //   if (JSON.stringify(document.getElementsByTagName("body")) == null) {
+    //     alert(IE开启兼容性视图);
+    //   } else {
+    //     alert(IE关闭兼容性视图);
+    //   }
+    try {
+        console.log(document.documentMode)
+        console.log(document.compatMode)
+        console.log(document.getElementsByTagName('body'))
+        if(document.getElementsByTagName('body') instanceof HTMLCollection){
+            alert('ie关闭兼容模式')
+        }else{
+            alert('开启兼容模式')
+        }
+    }catch(e){
+        console.log(e)
+        alert('开启兼容模式')
+    }
+    </script>
+  </body>
+</html>

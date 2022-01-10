@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document333333333334444</title>
+    <style>
+        .clip{
+            clip: rect(auto 100px auto auto);
+        }
+        .divContent{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+        }
+      /* 本页的css样式表 */
+      .reveal * {
+        display: none;
+      }
+      /* class="reveal"的元素的子元素都不显示 */
+      .reveal *.handle {
+        display: block;
+      }
+      /* 除了class="handle"的元素 */
+      #clock {
+        /* 定义 id="clock"的元素的样式 */
+        font: bold 24pt sans; /* 使用粗体大号字 */
+        background: #ddf; /* 定义蓝灰色背景 */
+        padding: 10px; /* 周围有一圈空白 */
+        border: solid black 2px; /* 定义纯黑色边框 */
+        border-radius: 10px; /* 定义圆角（如果浏览器支持的话） */
+      }
+    </style>
+    <script>
+      // 所有的页面逻辑在onload事件之后启动
+      //   window.onload = function() {
+      //     // 找到所有class名为"reveal"的容器元素
+      //     var elements = document.getElementsByClassName("reveal");
+      //     for (var i = 0; i < elements.length; i++) {
+      //       // 对每个元素进行遍历
+      //       var elt = elements[i];
+      //       // 找到容器中的"handle"元素
+      //       var title = elt.getElementsByClassName("handle")[0];
+      //       // 当单击这个元素时，呈现剩下的内容
+      //       addRevealHandler(title, elt);
+      //     }
+      function addRevealHandler(title, elt) {
+        title.onclick = function() {
+          if (elt.className == "reveal") {
+            elt.className = "revealed";
+          } else if (elt.className == "revealed") elt.className = "reveal";
+        };
+      }
+      //};
+      // 定义一个函数用以显示当前时间
+      //   function displayTime() {
+      //     var elt = document.getElementById("clock"); // 通过id= "clock"找到元素
+      //     var now = new Date(); // 得到当前时间
+      //     elt.innerHTML = now.toLocaleTimeString(); // 让elt来显示它
+      //     setTimeout(displayTime, 1000); // 在1秒后再次执行
+      //   }
+      //   window.onload = displayTime; // 当onload事件发生时开始显示时间
+      /*@cc_on
+  @if (@_jscript)
+    // 该代码位于一条JS注释内但在IE中执行它
+    alert("In IE");
+  @end
+  @*/
+    </script>
+  </head>
+
+  <body>
+      <div style="position: relative;">
+        <div class="divContent clip"></div>
+      </div>
+    <div class="reveal">
+      <h1 class="handle">Click Here to Reveal Hidden Text</h1>
+      <p>This paragraph is hidden. It appears when you click on the title.</p>
+    </div>
+    <span id="clock">222222222</span>
+    <span class="className" name="csName">111111111</span>
+    <!-- <span name="csName">22222</span>
+    <span name="csName">33333333</span> -->
+    <!-- 输出时钟 -->
+    <form name="formA"></form>
+    <span class="sparkline" data-ymin="0" data-ymax="10">
+      1 1 1 2 2 3 4 5 5 4 3 5 6 7 7 4 2 1
+    </span>
+    <div id="editor" contenteditable>
+      Click to edit
+    </div>
+    <object data="move.swf" type="application/x-shockwave-flash"></object>
+
+    <!-- Embed a flash movie with parameters -->
+    <object data="move.swf" type="application/x-shockwave-flash">
+      <param name="foo" value="bar" />
+    </object>
+    <OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"
+WIDTH="550" HEIGHT="400" id="myMovieName">
+<PARAM NAME=movie VALUE="myFlashMovie.swf">
+<PARAM NAME=quality VALUE=high>
+<PARAM NAME=bgcolor VALUE=#FFFFFF>
+<EMBED src="http://www.doflash.net/"/support/flash/ts/documents/myFlashMovie.swf"" quality=high bgcolor=#FFFFFF WIDTH="550" HEIGHT="400"
+NAME="myMovieName" ALIGN="" TYPE="application/x-shockwave-flash"
+PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer">
+</EMBED>
+</OBJECT>
+
+    <script>
+      let id = document.getElementById("clock");
+      console.log(id);
+      let name = document.getElementsByName("csName");
+      console.log(name);
+      console.log(document.formA);
+      let span = document.getElementsByTagName("p");
+      console.log(span);
+      let className = document.getElementsByClassName("className");
+      console.log(className);
+
+      // 假设ES5的Array.map()方法（或类似能工作的方法）有定义
+      var sparklines = document.getElementsByClassName("sparkline");
+      for (var i = 0; i < sparklines.length; i++) {
+        console.log(sparklines[i]);
+        var dataset = sparklines[i].dataset;
+        var ymin = parseFloat(dataset.ymin);
+        var ymax = parseFloat(dataset.ymax);
+        //console.log(sparklines[i].textContent);
+        var data = sparklines[i].textContent.split(" ").map(parseFloat);
+        console.log(dataset);
+        console.log(ymin, ymax);
+        console.log(data);
+      }
+      document.createTextNode("text node content");
+      console.log(id.attributes[0]);
+      //   document.write("<p>Document title: " + document.title);
+      setTimeout(function() {
+        console.log(window.getSelection().toString());
+      }, 2000);
+    </script>
+  </body>
+</html>
