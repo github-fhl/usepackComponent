@@ -30,8 +30,15 @@ module.exports = {
     publicPath:
       process.env.NODE_ENV === "production"
         ? config.build.assetsPublicPath
-        : config.dev.assetsPublicPath
+        : config.dev.assetsPublicPath,
+
+    //libraryTarget: 'commonjs2',
+    //sqlite3: 'sqlite3'
   },
+   // externals: {
+   //   sqlite3: 'sqlite3'
+   // },
+  //configureWebpack: { externals: { 'sqlite3': 'commonjs sqlite3', } },
   resolve: {
     extensions: [".js", ".vue", ".json"],
     alias: {
@@ -53,7 +60,9 @@ module.exports = {
         include: [
           resolve("src"),
           resolve("test"),
-          resolve("node_modules/webpack-dev-server/client")
+          resolve("node_modules/webpack-dev-server/client"),
+
+
         ]
       },
       //   {

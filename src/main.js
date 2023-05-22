@@ -5,7 +5,8 @@ import App from './App'
 import router from './router'
 import './utils/global'
 // import ComponentEl from './yr'
-import './componentsEl/styles/index.scss'
+// import './componentsEl/styles/index.scss'
+import './components/style/radio.scss'
 
 Vue.config.productionTip = false
 
@@ -22,6 +23,7 @@ var data = Mock.mock({
 })
 // 输出结果
 console.log(data)
+console.log('hh')
 
 /* eslint-disable no-new */
 new Vue({
